@@ -1,2 +1,42 @@
 body {
   background-color: #f2f2f2; }
+
+.navbar-default {
+  background-color: #fff !important; }
+  .navbar-default .app-logo {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    display: inline-block;
+    font-size: 19px; }
+
+.main {
+  padding: 100px 0; }
+  .main .box {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 30px;
+    margin-bottom: 30px; }
+    .main .box .your-logo {
+      border-radius: 1000px;
+      border: 2px dashed #e6e6e6;
+      text-align: center;
+      width: 125px;
+      height: 125px;
+      line-height: 18px !important;
+      padding-top: 44px;
+      -webkit-transition: all .5s;
+      -moz-transition: all .5s;
+      -ms-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s; }
+      .main .box .your-logo:hover, .main .box .your-logo:active, .main .box .your-logo:focus {
+        cursor: pointer;
+        background-color: #fafafa;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -ms-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s; }
+      .main .box .your-logo input {
+        display: none; }
