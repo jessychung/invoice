@@ -160,7 +160,8 @@ label {
   }
 }
 .form-control[readonly] {
-  background-color: #edf1f5 !important;
+  background-color: rgba(237, 241, 245, 0.28) !important;
+  border: 1px solid #edf1f5 !important;
   @include hover-state {
     box-shadow: none;
     border: 1px solid #edf1f5 !important;
@@ -177,9 +178,29 @@ label {
 .grid-item {
   background-color: #f2f6fa;
   padding: 15px 0;
+  border-bottom: 1px solid #e6ebef;
   &:last-of-type {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+  }
+}
+
+.delete-item {
+  font-size: 20px;
+  color: #344c67;
+  line-height: 40px;
+  background-color: #f2f6fa;
+  position: absolute;
+  right: 0;
+  margin-right: -38px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 50px;
+  height: 46px;
+  text-align: center;
+  display: none;
+  @include hover-state {
+    cursor: pointer;
   }
 }
 
@@ -190,4 +211,18 @@ label {
   font-weight: 600;
   font-size: 19px;
   line-height: 40px;
+}
+
+.addlinebutton {
+  border:1px solid #e3eaf3;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 10px 15px;
+  font-weight: 500;
+  font-size: 13px;
+  margin-top: 20px;
+  @include hover-state {
+    box-shadow: none;
+    outline: none;
+  }
 }
