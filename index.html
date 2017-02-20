@@ -5,22 +5,24 @@
     <title>Invoice Generator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./styles/main.css" >
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600|Roboto+Slab" rel="stylesheet">
     <script src="https://use.fontawesome.com/4d1420b853.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+    <script src="https://use.typekit.net/yho8lcg.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="main-header">
     <div class="container">
-        <div class="col-md-6 col-sm-6">
-            <div class="app-logo">Invoicely</div>
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <div class="avatar">
-                JC
+        <div class="row">
+            <div class="col-md-6">
+                <div class="logo">
+                    <img src="images/invoice_icon.svg" width="55px" height="auto">
+                </div>
+                <h1>Invoice Creator</h1>
             </div>
-            <div>
-                Jessy Chung
+            <div class="col-md-6" style="text-align: right">
+                <button type="button" class="btn btn-brand">Save Invoice</button>
             </div>
         </div>
     </div>
@@ -30,19 +32,195 @@
     <div class="row">
         <div class="col-md-9">
             <div class="box">
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="logo" class="your-logo">
-                            Add your logo here
-                            <input type="file" name="filename" id="logo" accept="image/jpeg">
-                        </label>
+                <div class="row box-header">
+                    <div class="col-md-8">
+                        <h1>Tell us more about your company</h1>
+                    </div>
+                    <div class="col-md-4" style="text-align: right">
+                        <span>Step 1 of 3</span>
                     </div>
                 </div>
+                <div class="row box-content">
+                    <!--<div class="col-md-3">-->
+                        <!--<label for="logo" class="your-logo">-->
+                            <!--Add your logo here-->
+                            <!--<input type="file" name="filename" id="logo" accept="image/jpeg">-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="name">Company Name:</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter your company's name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="companyaddress">Address</label>
+                                    <input type="text" class="form-control" id="companyaddress">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="companycity">City</label>
+                                    <input type="text" class="form-control" id="companycity">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="companypostal">Postal Code</label>
+                                    <input type="text" class="form-control" id="companypostal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="companyprovince">Province</label>
+                                    <input type="text" class="form-control" id="companyprovince">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="companycountry">Country</label>
+                                    <input type="text" class="form-control" id="companycountry" value="Canada" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="companynumber">Company Phone Number</label>
+                                    <input type="tel" class="form-control" id="companynumber">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="companyemail">Company Email</label>
+                                    <input type="email" class="form-control" id="companyemail">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="row box-header">
+                    <div class="col-md-8">
+                        <h1>Customer information</h1>
+                    </div>
+                    <div class="col-md-4" style="text-align: right">
+                        <span>Step 2 of 3</span>
+                    </div>
+                </div>
+                <div class="row box-content">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customername">Customer Name</label>
+                                    <input type="text" class="form-control" id="customername">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customeremail">Company Email</label>
+                                    <input type="email" class="form-control" id="customeremail">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="customeraddress">Address</label>
+                                    <input type="text" class="form-control" id="customeraddress">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customercity">City</label>
+                                    <input type="text" class="form-control" id="customercity">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customerpostal">Postal Code</label>
+                                    <input type="text" class="form-control" id="customerpostal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customerprovince">Province</label>
+                                    <input type="text" class="form-control" id="customerprovince">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customercountry">Country</label>
+                                    <input type="text" class="form-control" id="customercountry" value="Canada" readonly>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="box">
+                <div class="row box-header">
+                    <div class="col-md-8">
+                        <h1>Add Billing Items</h1>
+                    </div>
+                    <div class="col-md-4" style="text-align: right">
+                        <span>Step 3 of 3</span>
+                    </div>
+                </div>
+                <div class="row box-content">
+                    <div class="col-md-12">
+                        <div class="row grid-header">
+                            <div class="col-md-6">Item</div>
+                            <div class="col-md-2">Quantity</div>
+                            <div class="col-md-2">Price</div>
+                            <div class="col-md-2">Amount</div>
+                        </div>
+                        <div class="row grid-item">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control grid-input" placeholder="Enter Item Description">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control grid-input">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control grid-input">
+                            </div>
+                            <div class="col-md-2">
+                                <span class="item-amount">$10.00</span>
+                            </div>
+                        </div>
+                        <button type="button" class="addlinebutton" id="AddLineItem">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            <span class="body-link segment-link">Add another item</span>
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="col-md-3">
             <div class="box">
-                controls
+                <div class="row box-header">
+                    <div class="col-md-12">
+                        <h1>Invoice Settings</h1>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

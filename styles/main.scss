@@ -1,4 +1,11 @@
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
 
+$blue: #31b0ec;
+$text: #4b627a;
+$green: #7ab55c;
 
 @mixin hover-state {
   &:hover, &:active, &:focus {
@@ -16,34 +23,61 @@
 
 body {
   background-color: #f2f2f2;
+  font-family: "soleil",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #344c67;
+  font-weight: $light !important;
 }
 
-.navbar-default {
-  background-color: #fff !important;
-  .app-logo {
-    font-family: 'Roboto Slab', serif;
-    font-weight: 600;
+.main-header {
+  background-color: #344c67;
+  height: 200px;
+  padding-top: 20px;
+  color: #fff;
+  .logo {
     display: inline-block;
-    font-size: 19px;
+    width: 70px;
+    height:70px;
+    border-radius: 1000px;
+    background-color: $blue;
+    margin-top: -12px;
+    text-align: center;
+  }
+
+  h1 {
+    display: inline-block;
+    font-size: 21px;
+  }
+  button {
+    background-color: transparent;
+    border:1px solid #fff;
+    color: #fff;
+    border-radius: 3px !important;
+    text-transform: uppercase;
+    font-weight: $light;
   }
 }
 
 .main {
-  padding: 100px 0;
+  margin-top: -85px;
+  padding: 50px 0;
   .box {
     background-color: #fff;
     border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    padding: 30px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.06);
+    padding: 45px 35px;
     margin-bottom: 30px;
     .your-logo {
-      border-radius: 1000px;
+      border-radius: 3px;
       border: 2px dashed #e6e6e6;
       text-align: center;
       width: 125px;
       height: 125px;
       line-height: 18px !important;
       padding-top: 44px;
+      background-color: #f2f6fa;
+
       @include transition;
       @include hover-state {
         cursor: pointer;
@@ -57,3 +91,103 @@ body {
   }
 }
 
+.box-header {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+  span {
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    display: inline-block;
+    font-weight: $semibold;
+  }
+  h1 {
+    font-size: 17px;
+    margin-top: 0;
+    font-weight: 400;
+    display: inline-block;
+    position: relative;
+    //&:after {
+    //  content: '';
+    //  width: 100%;
+    //  height: 3px;
+    //  display: block;
+    //  background-color: $blue;
+    //  position: absolute;
+    //}
+  }
+}
+
+.box-content {
+  padding: 30px 0 0 0;
+}
+
+label {
+  font-weight: 300;
+  color: rgba(52, 76, 103, 0.75);
+}
+
+::-webkit-input-placeholder {
+  color: #b8c6d6 !important;
+  font-weight: 200;
+}
+::-moz-placeholder {
+  color: #b8c6d6 !important;
+  font-weight: 200;
+}
+:-ms-input-placeholder {
+  color: #b8c6d6 !important;
+  font-weight: 200;
+}
+:-moz-placeholder {
+  color: #b8c6d6 !important;
+  font-weight: 200;
+}
+
+.form-control {
+  background-color: #f2f6fa !important;
+  border: 1px solid #e3eaf3 !important;
+  box-shadow: none;
+  transition: all .3s;
+  height: 42px !important;
+  color: #344c67;
+  font-weight: 400;
+  @include hover-state {
+    box-shadow: none;
+    border: 1px solid #cbd1da !important;
+    transition: all .3s;
+  }
+}
+.form-control[readonly] {
+  background-color: #edf1f5 !important;
+  @include hover-state {
+    box-shadow: none;
+    border: 1px solid #edf1f5 !important;
+  }
+}
+
+.grid-header {
+  background-color: #e3eaf3;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 15px 0;
+}
+
+.grid-item {
+  background-color: #f2f6fa;
+  padding: 15px 0;
+  &:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.grid-input {
+  background-color: #fff !important;
+}
+.item-amount {
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 40px;
+}
