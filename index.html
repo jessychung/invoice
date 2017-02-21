@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./styles/main.css" >
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600|Roboto+Slab" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">-->
     <script src="https://use.fontawesome.com/4d1420b853.js"></script>
     <script src="https://use.typekit.net/yho8lcg.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -51,8 +52,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="name">Company Name:</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter your company's name">
+                                    <label for="companyname">Company Name:</label>
+                                    <input type="text" class="form-control" id="companyname" placeholder="Enter your company's name">
                                 </div>
                             </div>
                         </div>
@@ -192,7 +193,7 @@
                             <div class="col-md-2">Amount</div>
                         </div>
                         <div class="grid">
-                            <div class="row grid-item">
+                            <div class="row grid-item" id="griditem">
                                 <div class="col-md-6">
                                     <input type="text" class="form-control grid-input" placeholder="Enter Item Description">
                                 </div>
@@ -203,7 +204,7 @@
                                     <input type="number" min="0" class="form-control grid-input item-price">
                                 </div>
                                 <div class="col-md-2">
-                                    <span class="item-amount">$10.00</span>
+                                    <span class="item-amount">$0.00</span>
                                 </div>
                                 <div class="delete-item">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
@@ -224,10 +225,51 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="box">
-                <div class="row box-header">
+            <div class="right-box">
+                <div class="row box-header" style="border: 0">
                     <div class="col-md-12">
                         <h1>Invoice Settings</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="invoicenumber">Invoice Number</label>
+                            <input type="number" min="0" class="form-control" id="invoicenumber">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="invoicedate">Issue Date</label>
+                            <input type="text" class="form-control" id="invoicedate">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="duedate">Due Date</label>
+                            <input type="text" class="form-control" id="duedate">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row box-header" style="border: 0">
+                    <div class="col-md-12">
+                        <h1>Choose a design:</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="greybox">
+                            <h1>All done?</h1>
+                            <p>Now, choose a design for your invoice.</p>
+                            <button class="btn btn-brand" id="saveInvoice">Save Invoice</button>
+                            <button class="btn btn-light" id="previewInvoice">Preview</button>
+                        </div>
                     </div>
                 </div>
             </div>
