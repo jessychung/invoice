@@ -8,6 +8,22 @@ $(function () {
     $( "#invoicedate" ).datepicker();
     $( "#duedate" ).datepicker();
 
+
+
+    var idCount = 0;
+
+    var storedItems = JSON.parse(localStorage.getItem('griditems'));
+    console.log(storedItems);
+
+
+    if(storedItems) {
+        for(var i = 0; i < storedItems.length; i++) {
+            var itemid = storedItems[i].id;
+            var itemhtml = storedItems[i].value;
+            $('.grid').append(itemhtml);
+        }
+    }
+
     $('input').each(function(){
         var id = $(this).attr('id');
         var value = localStorage.getItem(id);
@@ -18,10 +34,6 @@ $(function () {
         }
 
     });
-
-    var storeditems = localStorage.getItem('')
-    $('.grid').append(newitem);
-
 
     // $(document).on('keyup change', 'input', function () {
     //     $('input').each(function () {
@@ -43,16 +55,24 @@ $(function () {
             var value = $(this).val();
             localStorage.setItem(id, value);
         });
+        var griditems = [];
         $('.grid .grid-item').each(function () {
             var id = $(this).attr('id');
-            localStorage.setItem(id, $(this).html());
+            var eachitem = {
+                id: id,
+                value: $(this).wrap('<p/>').parent().html()
+            };
+            griditems.push(eachitem);
         })
-    })
+        localStorage.setItem('griditems', JSON.stringify(griditems.slice(1)));
+        $('.grid-item').unwrap();
 
-    var idCount = 0;
+    });
 
-    var itemqty;
-    var itemprice;
+
+
+
+
 
     addlinebutton.click(function () {
         idCount++;
@@ -75,7 +95,8 @@ $(function () {
         $('.grid').append(newitem);
     });
 
-
+    var itemqty;
+    var itemprice;
 
     $(document).on('mouseenter', '.grid-item', function()
     {
