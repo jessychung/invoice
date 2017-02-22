@@ -252,6 +252,33 @@ a {
   }
 }
 
+.subtotal-row, .tax-row {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px 0;
+  h1 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 300;
+  }
+  span {
+    font-weight: 600;
+    font-size: 19px;
+  }
+}
+
+.total-row {
+  h1 {
+    font-size: 15px;
+    margin: 0;
+  }
+  background-color: #f2f6fa;
+  padding: 15px 0;
+  span {
+    font-weight: 600;
+    font-size: 19px;
+    color: $blue;
+  }
+}
 
 
 

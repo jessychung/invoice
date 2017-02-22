@@ -194,6 +194,28 @@ a {
     margin-top: 0;
     font-weight: 500; }
 
+.subtotal-row, .tax-row {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px 0; }
+  .subtotal-row h1, .tax-row h1 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: 300; }
+  .subtotal-row span, .tax-row span {
+    font-weight: 600;
+    font-size: 19px; }
+
+.total-row {
+  background-color: #f2f6fa;
+  padding: 15px 0; }
+  .total-row h1 {
+    font-size: 15px;
+    margin: 0; }
+  .total-row span {
+    font-weight: 600;
+    font-size: 19px;
+    color: #31b0ec; }
+
 .ui-datepicker {
   background-color: #fff;
   border: 1px solid #d8d8d8;

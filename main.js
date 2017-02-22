@@ -117,7 +117,13 @@ $(function () {
         $('.grid').append(newitem);
     });
 
-
+    $(document).on('change', function () {
+        var subTotal = 0;
+        $('.item-amount').each(function () {
+            subTotal += parseFloat($(this).text().replace("$", ""));
+        });
+        $('.subtotal').text('$' + subTotal);
+    });
 
     $(document).on('mouseenter', '.grid-item', function()
     {
@@ -138,6 +144,7 @@ $(function () {
         $('.grid-item').each(function () {
             count++;
             $(this).attr('id', `griditem${count}`);
+            $(this).find('.grid-input').attr('id', `item${count}`);
             $(this).find('.item-qty').attr('id', `qty${count}`);
             $(this).find('.item-price').attr('id', `price${count}`);
         })
@@ -162,9 +169,6 @@ $(function () {
             itemqty = parseFloat($(this).val());
         }
 
-        console.log(itemprice);
-        console.log(itemqty);
-
         var amount = Math.round(itemprice * itemqty).toFixed(2);
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount);
     });
@@ -185,9 +189,6 @@ $(function () {
         } else {
             itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val());
         }
-
-        console.log(itemprice);
-        console.log(itemqty);
 
         var amount = Math.round(itemprice * itemqty).toFixed(2);
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount);
