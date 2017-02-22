@@ -39,6 +39,9 @@ body {
 .main-header {
   background-color: #344c67;
   //background: linear-gradient(to top, #08518e, #0e71a8);
+  background-image: url("/images/pattern.png");
+  background-repeat:no-repeat;
+  background-size: 100% 100%;
   height: 200px;
   padding-top: 20px;
   color: #fff;
