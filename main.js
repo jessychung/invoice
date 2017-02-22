@@ -103,23 +103,23 @@ $(function () {
         $('.grid').append(newitem);
     });
 
-    var subtotal = 0;
-    $('.item-amount').each(function () {
-        subtotal += parseFloat($(this).text().replace("$", ""));
-    });
-
-    $('.subtotal').text('$' + subtotal.toFixed(2));
-
-    var subtotalValue = parseFloat($('.subtotal').text().replace("$", ""));
-    var tax = parseFloat(subtotalValue * (13/100)).toFixed(2);
-    $('.tax').text('$' + tax);
-
-    $(document).on('change', function () {
-        var subTotal = 0;
+    function getbill() {
+        var subtotal = 0;
         $('.item-amount').each(function () {
-            subTotal += parseFloat($(this).text().replace("$", ""));
+            subtotal += parseFloat($(this).text().replace("$", ""));
         });
-        $('.subtotal').text('$' + subTotal.toFixed(2));
+
+        $('.subtotal').text('$' + subtotal.toFixed(2));
+
+        var subtotalValue = parseFloat($('.subtotal').text().replace("$", ""));
+        var tax = parseFloat(subtotalValue * (13/100)).toFixed(2);
+        $('.tax').text('$' + tax);
+    }
+
+    getbill();
+
+    $(document).on('keyup change', function () {
+       getbill();
     });
 
     $(document).on('mouseenter', '.grid-item', function()
@@ -145,7 +145,7 @@ $(function () {
             $(this).find('.item-qty').attr('id', `qty${count}`);
             $(this).find('.item-price').attr('id', `price${count}`);
         })
-
+        getbill();
 
     });
 
@@ -154,17 +154,20 @@ $(function () {
         var itemprice = parseFloat($(this).parent().siblings('div').find('.item-price').val()).toFixed(2);
         var itemqty = parseFloat($(this).val()).toFixed(2);
 
-        if(!itemprice) {
+        if(isNaN(itemprice)) {
             itemprice = 0;
         } else {
             itemprice = parseFloat($(this).parent().siblings('div').find('.item-price').val()).toFixed(2);
         }
 
-        if(!itemqty) {
+        if(isNaN(itemqty)) {
             itemqty = 0;
         } else {
             itemqty = parseFloat($(this).val()).toFixed(2);
         }
+
+        console.log(itemqty);
+        console.log(itemprice);
 
         var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
@@ -175,17 +178,20 @@ $(function () {
         var itemprice = parseFloat($(this).val()).toFixed(2);
         var itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val()).toFixed(2);
 
-        if(!itemprice) {
+        if(isNaN(itemprice)) {
             itemprice = 0;
         } else {
             itemprice = parseFloat($(this).val()).toFixed(2);
         }
 
-        if(!itemqty) {
+        if(isNaN(itemqty)) {
             itemqty = 0;
         } else {
             itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val()).toFixed(2);
         }
+
+        console.log(itemqty);
+        console.log(itemprice);
 
         var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
