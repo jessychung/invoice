@@ -30,9 +30,15 @@ body {
   font-weight: $light !important;
 }
 
+.fixed {
+  position: fixed;
+  padding-top: 0 !important;
+  top: 30px;
+}
+
 .main-header {
   background-color: #344c67;
-  //background: linear-gradient(to bottom, #08518e, #0e71a8);
+  //background: linear-gradient(to top, #08518e, #0e71a8);
   height: 200px;
   padding-top: 20px;
   color: #fff;

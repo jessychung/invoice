@@ -6,6 +6,11 @@ body {
   color: #344c67;
   font-weight: 300 !important; }
 
+.fixed {
+  position: fixed;
+  padding-top: 0 !important;
+  top: 30px; }
+
 .main-header {
   background-color: #344c67;
   height: 200px;

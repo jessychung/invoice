@@ -8,6 +8,18 @@ $(function () {
     $( "#invoicedate" ).datepicker();
     $( "#duedate" ).datepicker();
 
+    var rightbox = $(".right-box");
+    var h = rightbox.offset().top;
+
+    $(window).on("scroll", function(e) {
+        if ($(window).scrollTop() > h + 35) {
+            rightbox.addClass("fixed");
+        } else {
+            rightbox.removeClass("fixed");
+        }
+
+    });
+
 
 
     var idCount = 0;
