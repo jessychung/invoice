@@ -37,20 +37,6 @@ $(function () {
 
     });
 
-    // $(document).on('keyup change', 'input', function () {
-    //     $('input').each(function () {
-    //         var id = $(this).attr('id');
-    //         var value = $(this).val();
-    //         localStorage.setItem(id, value);
-    //     });
-    // });
-
-
-    // $('.grid-item').each(function() {
-    //     $(this).attr('id', 'item' + idCount);
-    //
-    // });
-
     saveInvoice.on('click', function () {
         $('input').each(function () {
             var id = $(this).attr('id');
@@ -117,12 +103,23 @@ $(function () {
         $('.grid').append(newitem);
     });
 
+    var subtotal = 0;
+    $('.item-amount').each(function () {
+        subtotal += parseFloat($(this).text().replace("$", ""));
+    });
+
+    $('.subtotal').text('$' + subtotal.toFixed(2));
+
+    var subtotalValue = parseFloat($('.subtotal').text().replace("$", ""));
+    var tax = parseFloat(subtotalValue * (13/100)).toFixed(2);
+    $('.tax').text('$' + tax);
+
     $(document).on('change', function () {
         var subTotal = 0;
         $('.item-amount').each(function () {
             subTotal += parseFloat($(this).text().replace("$", ""));
         });
-        $('.subtotal').text('$' + subTotal);
+        $('.subtotal').text('$' + subTotal.toFixed(2));
     });
 
     $(document).on('mouseenter', '.grid-item', function()
@@ -154,44 +151,44 @@ $(function () {
 
     $(document).on('keyup change', '.item-qty', function () {
 
-        var itemprice = parseFloat($(this).parent().siblings('div').find('.item-price').val());
-        var itemqty = parseFloat($(this).val());
+        var itemprice = parseFloat($(this).parent().siblings('div').find('.item-price').val()).toFixed(2);
+        var itemqty = parseFloat($(this).val()).toFixed(2);
 
         if(!itemprice) {
             itemprice = 0;
         } else {
-            itemprice = parseFloat($(this).parent().siblings('div').find('.item-price').val());
+            itemprice = parseFloat($(this).parent().siblings('div').find('.item-price').val()).toFixed(2);
         }
 
         if(!itemqty) {
             itemqty = 0;
         } else {
-            itemqty = parseFloat($(this).val());
+            itemqty = parseFloat($(this).val()).toFixed(2);
         }
 
-        var amount = Math.round(itemprice * itemqty).toFixed(2);
-        $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount);
+        var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
+        $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
     });
 
     $(document).on('keyup change', '.item-price', function () {
 
-        var itemprice = parseFloat($(this).val());
-        var itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val());
+        var itemprice = parseFloat($(this).val()).toFixed(2);
+        var itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val()).toFixed(2);
 
         if(!itemprice) {
             itemprice = 0;
         } else {
-            itemprice = parseFloat($(this).val());
+            itemprice = parseFloat($(this).val()).toFixed(2);
         }
 
         if(!itemqty) {
             itemqty = 0;
         } else {
-            itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val());
+            itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val()).toFixed(2);
         }
 
-        var amount = Math.round(itemprice * itemqty).toFixed(2);
-        $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount);
+        var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
+        $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
     });
 
 
