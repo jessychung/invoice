@@ -159,8 +159,8 @@ label {
   background-color: #fff !important; }
 
 .item-amount {
-  font-weight: 600;
-  font-size: 19px;
+  font-weight: 400;
+  font-size: 15px;
   line-height: 40px; }
 
 .addlinebutton {
@@ -200,40 +200,42 @@ a {
   .subtotal-row h1, .tax-row h1 {
     font-size: 15px;
     margin: 0;
-    font-weight: 300; }
+    font-weight: 300;
+    line-height: 22px; }
   .subtotal-row span, .tax-row span {
-    font-weight: 600;
-    font-size: 19px; }
+    font-weight: 400;
+    font-size: 15px; }
 
-.tax-row h1 {
-  display: inline-block; }
-
-.tax-row h2 {
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 300;
-  margin: 0; }
-  .tax-row h2 span {
+.tax-row {
+  border-bottom: 2px solid #cdd5e0; }
+  .tax-row h1 {
+    display: inline-block; }
+  .tax-row h2 {
+    display: inline-block;
     font-size: 15px;
-    margin: 0;
-    font-weight: 300; }
-  .tax-row h2 .change-tax {
-    font-size: 13px;
-    color: #bdbdbd; }
-    .tax-row h2 .change-tax:hover, .tax-row h2 .change-tax:active, .tax-row h2 .change-tax:focus {
-      cursor: pointer;
-      color: #a8a8a8; }
+    font-weight: 300;
+    margin: 0; }
+    .tax-row h2 span {
+      font-size: 15px;
+      margin: 0;
+      font-weight: 300; }
+    .tax-row h2 .change-tax {
+      font-size: 13px;
+      color: #bdbdbd; }
+      .tax-row h2 .change-tax:hover, .tax-row h2 .change-tax:active, .tax-row h2 .change-tax:focus {
+        cursor: pointer;
+        color: #a8a8a8; }
 
 .total-row {
   background-color: #f2f6fa;
   padding: 15px 0; }
   .total-row h1 {
     font-size: 15px;
-    margin: 0; }
+    margin: 0;
+    line-height: 29px; }
   .total-row span {
     font-weight: 600;
-    font-size: 19px;
-    color: #31b0ec; }
+    font-size: 19px; }
 
 #customtax {
   background-color: #fff !important;

@@ -120,6 +120,10 @@ $(function () {
         var tax = parseFloat(subtotalValue * (currentTax/100)).toFixed(2);
         $('.tax').text('$' + tax);
 
+        var grandtotal = parseFloat(tax) + parseFloat(subtotal);
+
+        $('.total').text('$' + grandtotal.toFixed(2));
+
     }
 
     getbill();
