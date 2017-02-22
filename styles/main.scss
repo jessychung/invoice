@@ -266,6 +266,31 @@ a {
   }
 }
 
+.tax-row {
+  h1 {
+    display: inline-block;
+  }
+  h2{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 0;
+    span {
+      font-size: 15px;
+      margin: 0;
+      font-weight: 300;
+    }
+    .change-tax {
+      font-size: 13px;
+      color: #bdbdbd;
+      @include hover-state{
+        cursor: pointer;
+        color: #a8a8a8;
+      }
+    }
+  }
+}
+
 .total-row {
   h1 {
     font-size: 15px;
@@ -278,6 +303,14 @@ a {
     font-size: 19px;
     color: $blue;
   }
+}
+
+#customtax {
+  background-color: #fff !important;
+  height: 30px !important;
+  font-weight: 300;
+  margin-top: 7px;
+  display:none;
 }
 
 

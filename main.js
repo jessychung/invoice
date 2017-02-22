@@ -103,6 +103,9 @@ $(function () {
         $('.grid').append(newitem);
     });
 
+    var currentTax = $('#currenttax').text();
+    $('#customtax').val(currentTax);
+
     function getbill() {
         var subtotal = 0;
         $('.item-amount').each(function () {
@@ -111,9 +114,12 @@ $(function () {
 
         $('.subtotal').text('$' + subtotal.toFixed(2));
 
+        var currentTax = $('#currenttax').text();
+
         var subtotalValue = parseFloat($('.subtotal').text().replace("$", ""));
-        var tax = parseFloat(subtotalValue * (13/100)).toFixed(2);
+        var tax = parseFloat(subtotalValue * (currentTax/100)).toFixed(2);
         $('.tax').text('$' + tax);
+
     }
 
     getbill();
@@ -134,6 +140,22 @@ $(function () {
         $(this).find('.delete-item').hide();
     });
 
+
+    $('#customtax').on('keyup change', function () {
+        if($(this).val().length == 0) {
+            $('#currenttax').text('0');
+        } else {
+            $('#currenttax').text($(this).val());
+        }
+    });
+
+    $('#customtax').hide();
+
+    $('.change-tax').on('click', function () {
+        $('#customtax').toggle();
+        $(this).toggleClass('fa-pencil fa-times')
+    });
+
     var count = 0;
 
     $(document).on('click', '.delete-item', function () {
@@ -144,9 +166,8 @@ $(function () {
             $(this).find('.grid-input').attr('id', `item${count}`);
             $(this).find('.item-qty').attr('id', `qty${count}`);
             $(this).find('.item-price').attr('id', `price${count}`);
-        })
+        });
         getbill();
-
     });
 
     $(document).on('keyup change', '.item-qty', function () {
