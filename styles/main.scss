@@ -22,7 +22,7 @@ $green: #7ab55c;
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: #f2f6fa;
   font-family: "soleil",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,11 +37,10 @@ body {
 }
 
 .main-header {
-  background-color: #344c67;
-  //background: linear-gradient(to top, #08518e, #0e71a8);
-  background-image: url("/images/pattern.png");
-  background-repeat:no-repeat;
-  background-size: 100% 100%;
+  //background-color: #344c67;
+  background: url("/invoice/images/pattern.png"), linear-gradient(to top, #0d6093, #0e71a8);
+  background-repeat:repeat;
+  background-size: auto;
   height: 200px;
   padding-top: 20px;
   color: #fff;
@@ -250,7 +249,7 @@ a {
 }
 
 .greybox {
-  background-color: #efefef;
+  background-color: #e7edf3;
   border-radius: 5px;
   padding: 20px;
   margin-top: 20px;
@@ -258,6 +257,21 @@ a {
     font-size: 19px;
     margin-top: 0;
     font-weight: 500;
+  }
+  .btn {
+    width: 100%;
+    font-weight: 600;
+    border-radius: 3px;
+  }
+  .btn-brand {
+    background-color: $blue;
+    color: #fff;
+  }
+  .btn-light {
+    border:1px solid $blue;
+    color: $blue;
+    background-color: transparent;
+    margin-top: 10px;
   }
 }
 

@@ -1,5 +1,5 @@
 body {
-  background-color: #f7f7f7;
+  background-color: #f2f6fa;
   font-family: "soleil",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,10 +12,9 @@ body {
   top: 30px; }
 
 .main-header {
-  background-color: #344c67;
-  background-image: url("/images/pattern.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background: url("/invoice/images/pattern.png"), linear-gradient(to top, #0d6093, #0e71a8);
+  background-repeat: repeat;
+  background-size: auto;
   height: 200px;
   padding-top: 20px;
   color: #fff; }
@@ -193,7 +192,7 @@ a {
   color: #a8b6c1 !important; }
 
 .greybox {
-  background-color: #efefef;
+  background-color: #e7edf3;
   border-radius: 5px;
   padding: 20px;
   margin-top: 20px; }
@@ -201,6 +200,18 @@ a {
     font-size: 19px;
     margin-top: 0;
     font-weight: 500; }
+  .greybox .btn {
+    width: 100%;
+    font-weight: 600;
+    border-radius: 3px; }
+  .greybox .btn-brand {
+    background-color: #31b0ec;
+    color: #fff; }
+  .greybox .btn-light {
+    border: 1px solid #31b0ec;
+    color: #31b0ec;
+    background-color: transparent;
+    margin-top: 10px; }
 
 .subtotal-row, .tax-row {
   border-bottom: 1px solid #e6e6e6;
