@@ -23,7 +23,6 @@ $(function () {
 
     var idCount = 0;
 
-
     var storedItems = JSON.parse(localStorage.getItem('griditems'));
     console.log(storedItems);
 
@@ -233,6 +232,20 @@ $(function () {
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
     });
 
+    $('input').on('keyup', function () {
+        //inputs
+        var companyName = $('#companyname').val();
+        var companyAddress = $('#companyaddress').val();
+        var companyCity = $('#companycity').val();
+        var companyPostal = $('#companypostal').val();
+        var companyProvince = $('#companypostal').val();
+        var companyNumber = $('#companynumber').val();
+        var companyEmail = $('#companyemail').val();
 
+        var customerName = $('#customername').val();
+        var customerEmail = $('#customeremail').val();
+
+
+    })
 
 });

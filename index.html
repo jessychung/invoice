@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="logo">
-                    <img src="images/invoice_icon.svg" width="55px" height="auto">
+                    <img src="images/invoice_logo-01.svg" width="auto" height="40px">
                 </div>
                 <h1>Invoice Creator</h1>
             </div>
@@ -58,7 +58,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="companyaddress">Address</label>
-                                    <input type="text" class="form-control" id="companyaddress">
+                                    <input type="text" class="form-control" id="companyaddress" placeholder="Company's address">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="companycity">City</label>
-                                    <input type="text" class="form-control" id="companycity">
+                                    <input type="text" class="form-control" id="companycity" placeholder="Company's city">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -127,7 +127,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="customeremail">Company Email</label>
+                                    <label for="customeremail">Customer Email</label>
                                     <input type="email" class="form-control" id="customeremail">
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="customeraddress">Address</label>
+                                    <label for="customeraddress">Customer Address</label>
                                     <input type="text" class="form-control" id="customeraddress">
                                 </div>
                             </div>
@@ -189,26 +189,7 @@
                             <div class="col-md-2">Price</div>
                             <div class="col-md-2">Amount</div>
                         </div>
-                        <div class="grid">
-                            <!--<div class="row grid-item" id="griditem">-->
-                                <!--<div class="col-md-6">-->
-                                    <!--<input type="text" class="form-control grid-input" placeholder="Enter Item Description" id="item">-->
-                                <!--</div>-->
-                                <!--<div class="col-md-2">-->
-                                    <!--<input type="number" min="0" class="form-control grid-input item-qty" id="qty">-->
-                                <!--</div>-->
-                                <!--<div class="col-md-2">-->
-                                    <!--<input type="number" min="0" class="form-control grid-input item-price" id="price">-->
-                                <!--</div>-->
-                                <!--<div class="col-md-2">-->
-                                    <!--<span class="item-amount">$0.00</span>-->
-                                <!--</div>-->
-                                <!--<div class="delete-item">-->
-                                    <!--<i class="fa fa-trash-o" aria-hidden="true"></i>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        </div>
-
+                        <div class="grid"></div>
                         <div class="row">
                             <div class="col-md-8">
                                 <button type="button" class="addlinebutton" id="AddLineItem">
@@ -291,7 +272,7 @@
                             <h1>All done?</h1>
                             <p>Now, either save it for later or preview your invoice.</p>
                             <button class="btn btn-brand" id="saveInvoice">Save Invoice</button>
-                            <button class="btn btn-light" id="previewInvoice">Preview</button>
+                            <button class="btn btn-light" id="previewInvoice"><i class="fa fa-eye" aria-hidden="true"></i>  Preview</button>
                         </div>
                     </div>
                 </div>
@@ -299,6 +280,18 @@
         </div>
     </div>
 </div>
+
+
+<div class="invoice-view">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 

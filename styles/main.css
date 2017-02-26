@@ -24,8 +24,9 @@ body {
     height: 70px;
     border-radius: 1000px;
     background-color: #31b0ec;
-    margin-top: -12px;
     text-align: center; }
+    .main-header .logo img {
+      margin-top: 13px; }
   .main-header h1 {
     display: inline-block;
     font-size: 21px; }
@@ -135,12 +136,16 @@ label {
   background-color: #e3eaf3;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  padding: 15px 0; }
+  padding: 15px 0;
+  margin-left: 0px;
+  margin-right: 0; }
 
 .grid-item {
   background-color: #f2f6fa;
   padding: 15px 0;
-  border-bottom: 1px solid #e6ebef; }
+  border-bottom: 1px solid #e6ebef;
+  margin-left: 0px;
+  margin-right: 0; }
   .grid-item:last-of-type {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; }
@@ -152,10 +157,10 @@ label {
   background-color: #e3eaf3;
   position: absolute;
   right: 0;
-  margin-right: -38px;
+  margin-right: -31px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  width: 38px;
+  width: 46px;
   height: 46px;
   text-align: center;
   display: none; }
@@ -215,7 +220,8 @@ a {
 
 .subtotal-row, .tax-row {
   border-bottom: 1px solid #e6e6e6;
-  padding: 15px 0; }
+  padding: 15px 0;
+  margin-right: 0; }
   .subtotal-row h1, .tax-row h1 {
     font-size: 15px;
     margin: 0;
@@ -247,7 +253,8 @@ a {
 
 .total-row {
   background-color: #f2f6fa;
-  padding: 15px 0; }
+  padding: 15px 0;
+  margin-right: 0; }
   .total-row h1 {
     font-size: 15px;
     margin: 0;
