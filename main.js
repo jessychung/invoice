@@ -168,6 +168,7 @@ $(function () {
             var invoicedesc = $(this).find('.item-desc').val();
             var invoiceqty = $(this).find('.item-qty').val();
             var invoiceprice = $(this).find('.item-price').val();
+            var invoiceamount = $(this).find('.item-amount').text();
 
             var invoiceitem = `<div class="row">
                        <div class="col-md-6">
@@ -179,7 +180,7 @@ $(function () {
                             <p>${invoiceprice}</p>
                         </div>
                         <div class="col-md-2">
-                            <span class="invoice-item-amount"></span>
+                            <span class="invoice-item-amount">${invoiceamount}</span>
                         </div>
                         </div>`;
 
@@ -187,11 +188,12 @@ $(function () {
         })
     }
 
-    showitems();
+    function clearitems() {
+        $('.invoiceitems').html('');
+    }
 
     $(document).on('keyup change', function () {
        getbill();
-       showitems();
     });
 
     $(document).on('mouseenter', '.grid-item', function()
@@ -253,8 +255,6 @@ $(function () {
             itemqty = parseFloat($(this).val()).toFixed(2);
         }
 
-        console.log(itemqty);
-        console.log(itemprice);
 
         var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
@@ -276,9 +276,6 @@ $(function () {
         } else {
             itemqty = parseFloat($(this).parent().siblings('div').find('.item-qty').val()).toFixed(2);
         }
-
-        console.log(itemqty);
-        console.log(itemprice);
 
         var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
@@ -306,16 +303,19 @@ $(function () {
     $('.invoice-overlay').on('click', function () {
         $(this).fadeOut();
         $('.invoice-view').fadeOut();
+        clearitems();
     });
 
     $('.invoice-exit').on('click', function () {
         $('.invoice-view').fadeOut();
         $('.invoice-overlay').fadeOut();
+        clearitems();
     });
 
     preview.on('click', function () {
         $('.invoice-view').fadeIn();
         $('.invoice-overlay').fadeIn();
+        showitems();
     });
 
 
