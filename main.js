@@ -25,8 +25,6 @@ $(function () {
     var idCount = 0;
 
     var storedItems = JSON.parse(localStorage.getItem('griditems'));
-    console.log(storedItems);
-
 
     if(storedItems) {
         for(var i = 0; i < storedItems.length; i++) {
@@ -65,6 +63,7 @@ $(function () {
             localStorage.setItem(id, value);
         });
         var griditems = [];
+        var invoiceitems =[];
         $('.grid .grid-item').each(function () {
             var id = $(this).attr('id');
             var eachitem = {
@@ -81,7 +80,7 @@ $(function () {
 
     var newitem = `<div class="row grid-item" id="griditem">
                    <div class="col-md-6">
-                   <input type="text" class="form-control grid-input" placeholder="Enter Item Description" id="item"></div>
+                   <input type="text" class="form-control grid-input item-desc" placeholder="Enter Item Description" id="item"></div>
                     <div class="col-md-2">
                         <input type="number" min="0" class="form-control grid-input item-qty" id="qty">
                     </div>
@@ -96,6 +95,7 @@ $(function () {
                     </div>
                     </div>`;
 
+
     if($('.grid').children().length == 0) {
         $('.grid').append(newitem);
     }
@@ -106,7 +106,7 @@ $(function () {
         idCount++;
         var newitem = `<div class="row grid-item" id="griditem${idCount}">
                    <div class="col-md-6">
-                   <input type="text" class="form-control grid-input" placeholder="Enter Item Description" id="item${idCount}"></div>
+                   <input type="text" class="form-control grid-input item-desc" placeholder="Enter Item Description" id="item${idCount}"></div>
                     <div class="col-md-2">
                         <input type="number" min="0" class="form-control grid-input item-qty" id="qty${idCount}">
                     </div>
@@ -120,10 +120,25 @@ $(function () {
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                     </div>
                     </div>`;
+
+        // var invoiceitem = `<div class="row" id="invoiceitem${idCount}">
+        //            <div class="col-md-6">
+        //            <p id="invoiceitem${idCount}"></p></div>
+        //             <div class="col-md-2">
+        //                 <p id="invoiceqty${idCount}"></p>
+        //             </div>
+        //             <div class="col-md-2">
+        //                 <p id="invoiceprice${idCount}"></p>
+        //             </div>
+        //             <div class="col-md-2">
+        //                 <span class="invoice-item-amount"></span>
+        //             </div>
+        //             </div>`;
         $('.grid').append(newitem);
     });
 
     var currentTax = $('#currenttax').text();
+
     $('#customtax').val(currentTax);
 
     function getbill() {
@@ -148,8 +163,35 @@ $(function () {
 
     getbill();
 
+    function showitems() {
+        $('.grid .grid-item').each(function () {
+            var invoicedesc = $(this).find('.item-desc').val();
+            var invoiceqty = $(this).find('.item-qty').val();
+            var invoiceprice = $(this).find('.item-price').val();
+
+            var invoiceitem = `<div class="row">
+                       <div class="col-md-6">
+                       <p>${invoicedesc}</p></div>
+                        <div class="col-md-2">
+                            <p>${invoiceqty}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>${invoiceprice}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="invoice-item-amount"></span>
+                        </div>
+                        </div>`;
+
+            $('.invoiceitems').append(invoiceitem);
+        })
+    }
+
+    showitems();
+
     $(document).on('keyup change', function () {
        getbill();
+       showitems();
     });
 
     $(document).on('mouseenter', '.grid-item', function()
@@ -241,24 +283,6 @@ $(function () {
         var amount = Math.round((itemprice * itemqty + 0.00001) * 100) / 100;
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
     });
-
-    // var companyName;
-    // var companyAddress;
-    // var companyCity;
-    // var companyPostal;
-    // var companyProvince;
-    // var companyNumber;
-    // var companyEmail;
-    //
-    // var customerName;
-    // var customerEmail;
-    // var customerAddress;
-    // var customerCity;
-    // var customerProvince;
-    // var customerPostal;
-    // var invoiceNumber;
-    // var invoiceDate;
-    // var invoiceDuedate;
 
     var companyName = $('#companyname').val();
     var companyAddress = $('#companyaddress').val();

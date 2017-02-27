@@ -347,7 +347,8 @@ a {
           border-bottom-right-radius: 5px; }
 
 .items-header {
-  border-bottom: 1px solid #e6e6e6; }
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px 0; }
 
 .ui-datepicker {
   background-color: #fff;
