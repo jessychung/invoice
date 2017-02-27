@@ -21,6 +21,27 @@ $green: #7ab55c;
   transition: all .5s;
 }
 
+
+@media only screen and (max-width : 1200px) {
+  .right-box {
+    width: 220px;
+  }
+}
+
+
+@media only screen and (min-width : 1200px) {
+  .right-box {
+    width: 270px;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .right-box {
+    width: 165px;
+  }
+}
+
+
 body {
   background-color: #f2f6fa;
   font-family: "soleil",sans-serif;
@@ -61,6 +82,7 @@ body {
     display: inline-block;
     font-size: 21px;
     vertical-align: middle;
+    margin-left: 10px;
   }
   button {
     background-color: transparent;
@@ -368,6 +390,7 @@ a {
   display: none;
   .container {
     position: relative;
+    max-width: 880px;
     .invoice-paper {
       position: relative;
       .invoice-exit {
@@ -437,8 +460,7 @@ a {
 }
 
 .items-header {
-  border-top: 2px solid #344c67;
-  border-bottom: 1px solid #344c67;
+  border-bottom: 1px solid rgba(52, 76, 103, 0.25);
   padding: 10px 0;
   font-weight: 600;
 }
@@ -450,6 +472,15 @@ a {
     p {
       margin: 0;
     }
+  }
+}
+
+.na {
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 

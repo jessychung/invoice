@@ -1,3 +1,15 @@
+@media only screen and (max-width: 1200px) {
+  .right-box {
+    width: 220px; } }
+
+@media only screen and (min-width: 1200px) {
+  .right-box {
+    width: 270px; } }
+
+@media only screen and (max-width: 992px) {
+  .right-box {
+    width: 165px; } }
+
 body {
   background-color: #f2f6fa;
   font-family: "soleil",sans-serif;
@@ -30,7 +42,8 @@ body {
   .main-header h1 {
     display: inline-block;
     font-size: 21px;
-    vertical-align: middle; }
+    vertical-align: middle;
+    margin-left: 10px; }
   .main-header button {
     background-color: transparent;
     border: 1px solid #fff;
@@ -289,7 +302,8 @@ a {
   padding: 50px 0;
   display: none; }
   .invoice-view .container {
-    position: relative; }
+    position: relative;
+    max-width: 880px; }
     .invoice-view .container .invoice-paper {
       position: relative; }
       .invoice-view .container .invoice-paper .invoice-exit {
@@ -347,8 +361,7 @@ a {
           border-bottom-right-radius: 5px; }
 
 .items-header {
-  border-top: 2px solid #344c67;
-  border-bottom: 1px solid #344c67;
+  border-bottom: 1px solid rgba(52, 76, 103, 0.25);
   padding: 10px 0;
   font-weight: 600; }
 
@@ -357,6 +370,12 @@ a {
   padding: 10px 0; }
   .invoiceitems .row p {
     margin: 0; }
+
+.na h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
 
 .ui-datepicker {
   background-color: #fff;

@@ -13,342 +13,344 @@
 </head>
 <body>
 
-<div class="main-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="logo">
-                    <img src="images/invoice_logo-01.svg" width="auto" height="40px">
+<div class="hidden-xs">
+    <div class="main-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="logo">
+                        <img src="images/invoice_logo-01.svg" width="auto" height="40px">
+                    </div>
+                    <h1>Invoice Creator</h1>
                 </div>
-                <h1>Invoice Creator</h1>
             </div>
         </div>
     </div>
-</div>
 
-<div class="main container">
-    <div class="row">
-        <div class="col-md-9 col-sm-9">
-            <div class="box">
-                <div class="row box-header">
-                    <div class="col-md-8">
-                        <h1>Tell us more about your company</h1>
+    <div class="main container">
+        <div class="row">
+            <div class="col-md-9 col-sm-9">
+                <div class="box">
+                    <div class="row box-header">
+                        <div class="col-md-8">
+                            <h1>Tell us more about your company</h1>
+                        </div>
+                        <div class="col-md-4" style="text-align: right">
+                            <span>Step 1 of 3</span>
+                        </div>
                     </div>
-                    <div class="col-md-4" style="text-align: right">
-                        <span>Step 1 of 3</span>
-                    </div>
-                </div>
-                <div class="row box-content">
-                    <!--<div class="col-md-3">-->
+                    <div class="row box-content">
+                        <!--<div class="col-md-3">-->
                         <!--<label for="logo" class="your-logo">-->
-                            <!--Add your logo here-->
-                            <!--<input type="file" name="filename" id="logo" accept="image/jpeg">-->
+                        <!--Add your logo here-->
+                        <!--<input type="file" name="filename" id="logo" accept="image/jpeg">-->
                         <!--</label>-->
-                    <!--</div>-->
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="companyname">Company Name:</label>
-                                    <input type="text" class="form-control" id="companyname" placeholder="Enter your company's name">
+                        <!--</div>-->
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="companyname">Company Name:</label>
+                                        <input type="text" class="form-control" id="companyname" placeholder="Enter your company's name">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="companyaddress">Address</label>
-                                    <input type="text" class="form-control" id="companyaddress" placeholder="Company's address">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="companyaddress">Address</label>
+                                        <input type="text" class="form-control" id="companyaddress" placeholder="Company's address">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="companycity">City</label>
-                                    <input type="text" class="form-control" id="companycity" placeholder="Company's city">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="companycity">City</label>
+                                        <input type="text" class="form-control" id="companycity" placeholder="Company's city">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="companypostal">Postal Code</label>
+                                        <input type="text" class="form-control" id="companypostal">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="companypostal">Postal Code</label>
-                                    <input type="text" class="form-control" id="companypostal">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="companyprovince">Province</label>
+                                        <select id="companyprovince" class="form-control">
+                                            <option value="">Select a Province</option>
+                                            <option value="Alberta">Alberta</option>
+                                            <option value="British Columbia">British Columbia</option>
+                                            <option value="Manitoba">Manitoba</option>
+                                            <option value="New Brunswick">New Brunswick</option>
+                                            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                            <option value="Nova Scotia">Nova Scotia</option>
+                                            <option value="Ontario">Ontario</option>
+                                            <option value="Prince Edward Island">Prince Edward Island</option>
+                                            <option value="Quebec">Quebec</option>
+                                            <option value="Saskatchewan">Saskatchewan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="companycountry">Country</label>
+                                        <input type="text" class="form-control" id="companycountry" value="Canada" readonly>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="companyprovince">Province</label>
-                                    <select id="companyprovince" class="form-control">
-                                        <option value="">Select a Province</option>
-                                        <option value="Alberta">Alberta</option>
-                                        <option value="British Columbia">British Columbia</option>
-                                        <option value="Manitoba">Manitoba</option>
-                                        <option value="New Brunswick">New Brunswick</option>
-                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                                        <option value="Nova Scotia">Nova Scotia</option>
-                                        <option value="Ontario">Ontario</option>
-                                        <option value="Prince Edward Island">Prince Edward Island</option>
-                                        <option value="Quebec">Quebec</option>
-                                        <option value="Saskatchewan">Saskatchewan</option>
-                                    </select>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="companynumber">Company Phone Number</label>
+                                        <input type="tel" class="form-control" id="companynumber">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="companycountry">Country</label>
-                                    <input type="text" class="form-control" id="companycountry" value="Canada" readonly>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="companynumber">Company Phone Number</label>
-                                    <input type="tel" class="form-control" id="companynumber">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="companyemail">Company Email</label>
-                                    <input type="email" class="form-control" id="companyemail">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="companyemail">Company Email</label>
+                                        <input type="email" class="form-control" id="companyemail">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="box">
-                <div class="row box-header">
-                    <div class="col-md-8">
-                        <h1>Customer information</h1>
-                    </div>
-                    <div class="col-md-4" style="text-align: right">
-                        <span>Step 2 of 3</span>
-                    </div>
-                </div>
-                <div class="row box-content">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customername">Customer Name</label>
-                                    <input type="text" class="form-control" id="customername">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customeremail">Customer Email</label>
-                                    <input type="email" class="form-control" id="customeremail">
-                                </div>
-                            </div>
+                <div class="box">
+                    <div class="row box-header">
+                        <div class="col-md-8">
+                            <h1>Customer information</h1>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="customeraddress">Customer Address</label>
-                                    <input type="text" class="form-control" id="customeraddress">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customercity">City</label>
-                                    <input type="text" class="form-control" id="customercity">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customerpostal">Postal Code</label>
-                                    <input type="text" class="form-control" id="customerpostal">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customerprovince">Province</label>
-                                    <select id="customerprovince" class="form-control">
-                                        <option value="">Select a Province</option>
-                                        <option value="Alberta">Alberta</option>
-                                        <option value="British Columbia">British Columbia</option>
-                                        <option value="Manitoba">Manitoba</option>
-                                        <option value="New Brunswick">New Brunswick</option>
-                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
-                                        <option value="Nova Scotia">Nova Scotia</option>
-                                        <option value="Ontario">Ontario</option>
-                                        <option value="Prince Edward Island">Prince Edward Island</option>
-                                        <option value="Quebec">Quebec</option>
-                                        <option value="Saskatchewan">Saskatchewan</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customercountry">Country</label>
-                                    <input type="text" class="form-control" id="customercountry" value="Canada" readonly>
-                                </div>
-                            </div>
+                        <div class="col-md-4" style="text-align: right">
+                            <span>Step 2 of 3</span>
                         </div>
                     </div>
-
-                </div>
-            </div>
-            <div class="box">
-                <div class="row box-header">
-                    <div class="col-md-8">
-                        <h1>Add Billing Items</h1>
-                    </div>
-                    <div class="col-md-4" style="text-align: right">
-                        <span>Step 3 of 3</span>
-                    </div>
-                </div>
-                <div class="row box-content">
-                    <div class="col-md-12">
-                        <div class="row grid-header">
-                            <div class="col-md-6">Item</div>
-                            <div class="col-md-2">Quantity</div>
-                            <div class="col-md-2">Price</div>
-                            <div class="col-md-2">Amount</div>
-                        </div>
-                        <div class="grid"></div>
-                        <div class="row">
-                            <div class="col-md-8">
-                                <button type="button" class="addlinebutton" id="AddLineItem">
-                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                                    <span class="body-link segment-link">Add another item</span>
-                                </button>
+                    <div class="row box-content">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customername">Customer Name</label>
+                                        <input type="text" class="form-control" id="customername">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customeremail">Customer Email</label>
+                                        <input type="email" class="form-control" id="customeremail">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-md-4" style="padding-top: 15px;">
-                                <div class="row subtotal-row">
-                                    <div class="col-md-6">
-                                        <h1>Subtotal</h1>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="subtotal">-</span>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="customeraddress">Customer Address</label>
+                                        <input type="text" class="form-control" id="customeraddress">
                                     </div>
                                 </div>
-                                <div class="row tax-row">
-                                    <div class="col-md-6">
-                                        <h1>Tax</h1>
-                                        <h2>(<span id="currenttax">13</span>%) <span><i class="fa fa-pencil change-tax"></i></span></h2>
-                                        <input type="number" min="0" class="form-control" id="customtax" placeholder="Tax Rate"/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="tax">-</span>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customercity">City</label>
+                                        <input type="text" class="form-control" id="customercity">
                                     </div>
                                 </div>
-                                <div class="row total-row">
-                                    <div class="col-md-6">
-                                        <h1>Total</h1>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <span class="total">-</span>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customerpostal">Postal Code</label>
+                                        <input type="text" class="form-control" id="customerpostal">
                                     </div>
                                 </div>
-
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customerprovince">Province</label>
+                                        <select id="customerprovince" class="form-control">
+                                            <option value="">Select a Province</option>
+                                            <option value="Alberta">Alberta</option>
+                                            <option value="British Columbia">British Columbia</option>
+                                            <option value="Manitoba">Manitoba</option>
+                                            <option value="New Brunswick">New Brunswick</option>
+                                            <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                            <option value="Nova Scotia">Nova Scotia</option>
+                                            <option value="Ontario">Ontario</option>
+                                            <option value="Prince Edward Island">Prince Edward Island</option>
+                                            <option value="Quebec">Quebec</option>
+                                            <option value="Saskatchewan">Saskatchewan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="customercountry">Country</label>
+                                        <input type="text" class="form-control" id="customercountry" value="Canada" readonly>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                     </div>
                 </div>
-
-            </div>
-        </div>
-        <div class="col-md-3 col-sm-3">
-            <div class="right-box">
-                <div class="row box-header" style="border: 0">
-                    <div class="col-md-12">
-                        <h1>Invoice Settings</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="invoicenumber">Invoice Number</label>
-                            <input type="number" min="0" class="form-control" id="invoicenumber">
+                <div class="box">
+                    <div class="row box-header">
+                        <div class="col-md-8">
+                            <h1>Add Billing Items</h1>
+                        </div>
+                        <div class="col-md-4" style="text-align: right">
+                            <span>Step 3 of 3</span>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="invoicedate">Issue Date</label>
-                            <input type="text" class="form-control" id="invoicedate">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="duedate">Due Date</label>
-                            <input type="text" class="form-control" id="duedate">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="greybox">
-                            <h1>All done?</h1>
-                            <p>Now, either save it for later or preview your invoice.</p>
-                            <button class="btn btn-brand" id="saveInvoice">Save Invoice</button>
-                            <button class="btn btn-light" id="previewInvoice"><i class="fa fa-eye" aria-hidden="true"></i>  Preview</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="invoice-view">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="invoice-paper">
-                    <div class="invoice-exit">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <div class="invoice-paper-content">
-                        <div class="invoice-paper-head">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h1>INVOICE</h1><span id="showinvoicenumber"></span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <h2>Bill From</h2>
-                                        <p id="showcompanyname"></p>
-                                        <p id="showcompanyaddress"></p>
-                                        <p id="showcompanycity"></p>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <h2>Bill To</h2>
-                                        <p id="showcustomername"></p>
-                                        <p id="showcustomeraddress"></p>
-                                        <p id="showcustomercity"></p>
-                                    </div>
-                                </div>
+                    <div class="row box-content">
+                        <div class="col-md-12">
+                            <div class="row grid-header">
+                                <div class="col-md-6">Item</div>
+                                <div class="col-md-2">Quantity</div>
+                                <div class="col-md-2">Price</div>
+                                <div class="col-md-2">Amount</div>
                             </div>
-                        </div>
-                        <div class="invoice-paper-items">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row items-header">
-                                            <div class="col-md-6">Item</div>
-                                            <div class="col-md-2">Quantity</div>
-                                            <div class="col-md-2">Price</div>
-                                            <div class="col-md-2">Amount</div>
+                            <div class="grid"></div>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <button type="button" class="addlinebutton" id="AddLineItem">
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                        <span class="body-link segment-link">Add another item</span>
+                                    </button>
+                                </div>
+                                <div class="col-md-4" style="padding-top: 15px;">
+                                    <div class="row subtotal-row">
+                                        <div class="col-md-6">
+                                            <h1>Subtotal</h1>
                                         </div>
-                                        <div class="invoiceitems"></div>
+                                        <div class="col-md-6">
+                                            <span class="subtotal">-</span>
+                                        </div>
+                                    </div>
+                                    <div class="row tax-row">
+                                        <div class="col-md-6">
+                                            <h1>Tax</h1>
+                                            <h2>(<span id="currenttax">13</span>%) <span><i class="fa fa-pencil change-tax"></i></span></h2>
+                                            <input type="number" min="0" class="form-control" id="customtax" placeholder="Tax Rate"/>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="tax">-</span>
+                                        </div>
+                                    </div>
+                                    <div class="row total-row">
+                                        <div class="col-md-6">
+                                            <h1>Total</h1>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <span class="total">-</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <div class="right-box">
+                    <div class="row box-header" style="border: 0">
+                        <div class="col-md-12">
+                            <h1>Invoice Settings</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="invoicenumber">Invoice Number</label>
+                                <input type="number" min="0" class="form-control" id="invoicenumber">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="invoicedate">Issue Date</label>
+                                <input type="text" class="form-control" id="invoicedate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="duedate">Due Date</label>
+                                <input type="text" class="form-control" id="duedate">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="greybox">
+                                <h1>All done?</h1>
+                                <p>Now, either save it for later or preview your invoice.</p>
+                                <button class="btn btn-brand" id="saveInvoice">Save Invoice</button>
+                                <button class="btn btn-light" id="previewInvoice"><i class="fa fa-eye" aria-hidden="true"></i>  Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="invoice-view">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="invoice-paper">
+                        <div class="invoice-exit">
+                            <i class="fa fa-times"></i>
+                        </div>
+                        <div class="invoice-paper-content">
+                            <div class="invoice-paper-head">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h1>INVOICE</h1><span id="showinvoicenumber"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <h2>Bill From</h2>
+                                            <p id="showcompanyname"></p>
+                                            <p id="showcompanyaddress"></p>
+                                            <p id="showcompanycity"></p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h2>Bill To</h2>
+                                            <p id="showcustomername"></p>
+                                            <p id="showcustomeraddress"></p>
+                                            <p id="showcustomercity"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="invoice-paper-items">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="row items-header">
+                                                <div class="col-md-6">Item</div>
+                                                <div class="col-md-2">Quantity</div>
+                                                <div class="col-md-2">Price</div>
+                                                <div class="col-md-2">Amount</div>
+                                            </div>
+                                            <div class="invoiceitems"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -358,9 +360,15 @@
             </div>
         </div>
     </div>
+
+    <div class="invoice-overlay"></div>
 </div>
 
-<div class="invoice-overlay"></div>
+<div class="visible-xs na">
+    <h1 style="max-width: 400px; text-align: center; margin: 0 auto;">Sorry! Currently not available on mobile devices.</h1>
+</div>
+
+
 
 
 
