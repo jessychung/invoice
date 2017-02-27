@@ -13,7 +13,7 @@ $(function () {
     var h = rightbox.offset().top;
 
     $(window).on("scroll", function(e) {
-        if ($(window).scrollTop() > h + 35) {
+        if ($(window).scrollTop() > h + 85) {
             rightbox.addClass("fixed");
         } else {
             rightbox.removeClass("fixed");
@@ -285,7 +285,7 @@ $(function () {
     var companyAddress = $('#companyaddress').val();
     var companyCity = $('#companycity').val();
     var companyPostal = $('#companypostal').val();
-    var companyProvince = $('#companypostal').find(":selected").text();
+    var companyProvince = $('#companyprovince').val();
     var companyNumber = $('#companynumber').val();
     var companyEmail = $('#companyemail').val();
 
@@ -319,13 +319,13 @@ $(function () {
     });
 
 
-    $('input').on('keyup', function () {
+    $('input').on('keyup change', function () {
         //inputs
         var companyName = $('#companyname').val();
         var companyAddress = $('#companyaddress').val();
         var companyCity = $('#companycity').val();
         var companyPostal = $('#companypostal').val();
-        var companyProvince = $('#companypostal').val();
+        var companyProvince = $('#companyprovince').val();
         var companyNumber = $('#companynumber').val();
         var companyEmail = $('#companyemail').val();
 
@@ -345,6 +345,9 @@ $(function () {
 
     $('#showcompanyname').html(companyName);
     $('#showcompanyaddress').html(companyAddress);
-    $('#showcompanycity').html(companyCity);
+    $('#showcompanycity').html(companyCity + ',');
+    $('#showcompanyprovince').html(companyProvince);
+
+
     $('#showinvoicenumber').html(invoiceNumber);
 });

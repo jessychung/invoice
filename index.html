@@ -318,9 +318,9 @@
                         <div class="invoice-paper-content">
                             <div class="invoice-paper-head">
                                 <div class="container-fluid">
-                                    <div class="row">
+                                    <div class="row" style="margin-bottom: 20px">
                                         <div class="col-md-12">
-                                            <h1>INVOICE</h1><span id="showinvoicenumber"></span>
+                                            <h1>INVOICE</h1>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -328,13 +328,23 @@
                                             <h2>Bill From</h2>
                                             <p id="showcompanyname"></p>
                                             <p id="showcompanyaddress"></p>
-                                            <p id="showcompanycity"></p>
+                                            <p><span id="showcompanycity"></span> <span id="showcompanyprovince"></span></p>
+                                            <p><span id="showcompanypostal"></span> <span>Canada</span></p>
+
                                         </div>
                                         <div class="col-md-4">
                                             <h2>Bill To</h2>
                                             <p id="showcustomername"></p>
                                             <p id="showcustomeraddress"></p>
                                             <p id="showcustomercity"></p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <h2>Invoice No.</h2>
+                                            <p id="showinvoicenumber"></p>
+                                            <h2>Invoice Date</h2>
+                                            <p id="showinvoicedate"></p>
+                                            <h2>Due Date</h2>
+                                            <p id="showduedate"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -350,6 +360,12 @@
                                                 <div class="col-md-2">Amount</div>
                                             </div>
                                             <div class="invoiceitems"></div>
+                                            <div class="row" style="margin-top: 20px">
+                                                <div class="col-md-8"></div>
+                                                <div class="col-md-4">
+                                                    segset
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -27,7 +27,7 @@ body {
   background: url("/invoice/images/pattern.png"), linear-gradient(to top, #0d6093, #0e71a8);
   background-repeat: repeat;
   background-size: auto;
-  height: 200px;
+  height: 150px;
   padding-top: 20px;
   color: #fff; }
   .main-header .logo {
@@ -341,19 +341,9 @@ a {
             margin: 0;
             vertical-align: top; }
           .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head h2 {
-            font-size: 17px; }
+            font-size: 16px; }
           .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head p {
             margin-bottom: 2px; }
-          .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head #showinvoicenumber {
-            background-color: #31b0ec;
-            color: #fff;
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 100px;
-            font-size: 16px;
-            font-weight: 600;
-            vertical-align: top;
-            margin-left: 10px; }
         .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-items {
           background-color: #fff;
           padding: 30px;
