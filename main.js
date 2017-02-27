@@ -3,6 +3,7 @@ $(function () {
     var addlinebutton = $('#AddLineItem');
     var deletelinebutton = $('.delete-item');
     var saveInvoice = $('#saveInvoice');
+    var preview = $('#previewInvoice');
 
     //datepicker
     $( "#invoicedate" ).datepicker();
@@ -44,12 +45,22 @@ $(function () {
         } else {
             $(this).val(value);
         }
+    });
 
+    $('select').find(":selected").each(function () {
+        var id = $(this).parent().attr('id');
+        var value = localStorage.getItem(id);
+        $(this).parent().val(value);
     });
 
     saveInvoice.on('click', function () {
         $('input').each(function () {
             var id = $(this).attr('id');
+            var value = $(this).val();
+            localStorage.setItem(id, value);
+        });
+        $('select').find(":selected").each(function () {
+            var id = $(this).parent().attr('id');
             var value = $(this).val();
             localStorage.setItem(id, value);
         });
@@ -64,7 +75,6 @@ $(function () {
         })
         localStorage.setItem('griditems', JSON.stringify(griditems));
         $('.grid-item').unwrap();
-
     });
 
 
@@ -232,6 +242,59 @@ $(function () {
         $(this).parent('div').siblings('div').find('.item-amount').text('$' + amount.toFixed(2));
     });
 
+    // var companyName;
+    // var companyAddress;
+    // var companyCity;
+    // var companyPostal;
+    // var companyProvince;
+    // var companyNumber;
+    // var companyEmail;
+    //
+    // var customerName;
+    // var customerEmail;
+    // var customerAddress;
+    // var customerCity;
+    // var customerProvince;
+    // var customerPostal;
+    // var invoiceNumber;
+    // var invoiceDate;
+    // var invoiceDuedate;
+
+    var companyName = $('#companyname').val();
+    var companyAddress = $('#companyaddress').val();
+    var companyCity = $('#companycity').val();
+    var companyPostal = $('#companypostal').val();
+    var companyProvince = $('#companypostal').find(":selected").text();
+    var companyNumber = $('#companynumber').val();
+    var companyEmail = $('#companyemail').val();
+
+    var customerName = $('#customername').val();
+    var customerEmail = $('#customeremail').val();
+    var customerAddress = $('#customeraddress').val();
+    var customerCity = $('#customercity').val();
+    var customerProvince = $('#customerprovince').find(":selected").text();
+    var customerPostal = $('#customerpostal').val();
+
+    var invoiceNumber = $('#invoicenumber').val();
+    var invoiceDate = $('#invoicedate').val();
+    var invoiceDuedate = $('#duedate').val();
+
+    $('.invoice-overlay').on('click', function () {
+        $(this).fadeOut();
+        $('.invoice-view').fadeOut();
+    });
+
+    $('.invoice-exit').on('click', function () {
+        $('.invoice-view').fadeOut();
+        $('.invoice-overlay').fadeOut();
+    });
+
+    preview.on('click', function () {
+        $('.invoice-view').fadeIn();
+        $('.invoice-overlay').fadeIn();
+    });
+
+
     $('input').on('keyup', function () {
         //inputs
         var companyName = $('#companyname').val();
@@ -244,8 +307,20 @@ $(function () {
 
         var customerName = $('#customername').val();
         var customerEmail = $('#customeremail').val();
+        var customerAddress = $('#customeraddress').val();
+        var customerCity = $('#customercity').val();
+        var customerProvince = $('#customerprovince').val();
+        var customerPostal = $('#customerpostal').val();
+
+        var invoiceNumber = $('#invoicenumber').val();
+        var invoiceDate = $('#invoicedate').val();
+        var invoiceDuedate = $('#duedate').val();
+
+    });
 
 
-    })
-
+    $('#showcompanyname').html(companyName);
+    $('#showcompanyaddress').html(companyAddress);
+    $('#showcompanycity').html(companyCity);
+    $('#showinvoicenumber').html(invoiceNumber);
 });

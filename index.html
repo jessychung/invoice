@@ -80,7 +80,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="companyprovince">Province</label>
-                                    <input type="text" class="form-control" id="companyprovince">
+                                    <select id="companyprovince" class="form-control">
+                                        <option value="">Select a Province</option>
+                                        <option value="Alberta">Alberta</option>
+                                        <option value="British Columbia">British Columbia</option>
+                                        <option value="Manitoba">Manitoba</option>
+                                        <option value="New Brunswick">New Brunswick</option>
+                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                        <option value="Nova Scotia">Nova Scotia</option>
+                                        <option value="Ontario">Ontario</option>
+                                        <option value="Prince Edward Island">Prince Edward Island</option>
+                                        <option value="Quebec">Quebec</option>
+                                        <option value="Saskatchewan">Saskatchewan</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -158,7 +170,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="customerprovince">Province</label>
-                                    <input type="text" class="form-control" id="customerprovince">
+                                    <select id="customerprovince" class="form-control">
+                                        <option value="">Select a Province</option>
+                                        <option value="Alberta">Alberta</option>
+                                        <option value="British Columbia">British Columbia</option>
+                                        <option value="Manitoba">Manitoba</option>
+                                        <option value="New Brunswick">New Brunswick</option>
+                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                        <option value="Nova Scotia">Nova Scotia</option>
+                                        <option value="Ontario">Ontario</option>
+                                        <option value="Prince Edward Island">Prince Edward Island</option>
+                                        <option value="Quebec">Quebec</option>
+                                        <option value="Saskatchewan">Saskatchewan</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -286,12 +310,56 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
+                <div class="invoice-paper">
+                    <div class="invoice-exit">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <div class="invoice-paper-content">
+                        <div class="invoice-paper-head">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h1>INVOICE</h1><span id="showinvoicenumber"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <h2>Bill From</h2>
+                                        <p id="showcompanyname"></p>
+                                        <p id="showcompanyaddress"></p>
+                                        <p id="showcompanycity"></p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h2>Bill To</h2>
+                                        <p id="showcustomername"></p>
+                                        <p id="showcustomeraddress"></p>
+                                        <p id="showcustomercity"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invoice-paper-items">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row items-header">
+                                            <div class="col-md-6">Item</div>
+                                            <div class="col-md-2">Quantity</div>
+                                            <div class="col-md-2">Price</div>
+                                            <div class="col-md-2">Amount</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<div class="invoice-overlay"></div>
 
 
 

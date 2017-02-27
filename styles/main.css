@@ -29,7 +29,8 @@ body {
       margin-top: 13px; }
   .main-header h1 {
     display: inline-block;
-    font-size: 21px; }
+    font-size: 21px;
+    vertical-align: middle; }
   .main-header button {
     background-color: transparent;
     border: 1px solid #fff;
@@ -207,7 +208,7 @@ a {
     font-weight: 500; }
   .greybox .btn {
     width: 100%;
-    font-weight: 600;
+    font-weight: 400;
     border-radius: 3px; }
   .greybox .btn-brand {
     background-color: #31b0ec;
@@ -269,6 +270,84 @@ a {
   font-weight: 300;
   margin-top: 7px;
   display: none; }
+
+.invoice-overlay {
+  position: fixed;
+  background-color: rgba(40, 44, 53, 0.75);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none; }
+
+.invoice-view {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 100000;
+  padding: 50px 0;
+  display: none; }
+  .invoice-view .container {
+    position: relative; }
+    .invoice-view .container .invoice-paper {
+      position: relative; }
+      .invoice-view .container .invoice-paper .invoice-exit {
+        background-color: #fff;
+        width: 30px;
+        height: 30px;
+        border-radius: 1000px;
+        text-align: center;
+        line-height: 30px;
+        box-shadow: 0 0px 15px rgba(0, 0, 0, 0.25);
+        position: absolute;
+        z-index: 100;
+        right: -15px;
+        top: -15px; }
+        .invoice-view .container .invoice-paper .invoice-exit:hover, .invoice-view .container .invoice-paper .invoice-exit:active, .invoice-view .container .invoice-paper .invoice-exit:focus {
+          cursor: pointer; }
+      .invoice-view .container .invoice-paper .invoice-paper-content {
+        position: relative;
+        background-color: #fff;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border-radius: 4px;
+        outline: 0;
+        -webkit-box-shadow: 0 3px 9px rgba(40, 54, 66, 0.52);
+        box-shadow: 0 3px 9px rgba(40, 54, 66, 0.52); }
+        .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head {
+          background-color: #f2f6fa;
+          padding: 30px;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px; }
+          .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head h1 {
+            font-weight: 700;
+            font-size: 28px;
+            display: inline-block;
+            margin: 0;
+            vertical-align: top; }
+          .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head h2 {
+            font-size: 17px; }
+          .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head p {
+            margin-bottom: 2px; }
+          .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-head #showinvoicenumber {
+            background-color: #31b0ec;
+            color: #fff;
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 600;
+            vertical-align: top;
+            margin-left: 10px; }
+        .invoice-view .container .invoice-paper .invoice-paper-content .invoice-paper-items {
+          background-color: #fff;
+          padding: 30px;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px; }
+
+.items-header {
+  border-bottom: 1px solid #e6e6e6; }
 
 .ui-datepicker {
   background-color: #fff;
