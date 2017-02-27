@@ -297,10 +297,12 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: 100000;
   padding: 50px 0;
-  display: none; }
+  display: none;
+  overflow-y: auto;
+  height: 100%; }
   .invoice-view .container {
     position: relative;
     max-width: 880px; }

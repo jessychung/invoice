@@ -63,7 +63,6 @@ $(function () {
             localStorage.setItem(id, value);
         });
         var griditems = [];
-        var invoiceitems =[];
         $('.grid .grid-item').each(function () {
             var id = $(this).attr('id');
             var eachitem = {
@@ -121,19 +120,6 @@ $(function () {
                     </div>
                     </div>`;
 
-        // var invoiceitem = `<div class="row" id="invoiceitem${idCount}">
-        //            <div class="col-md-6">
-        //            <p id="invoiceitem${idCount}"></p></div>
-        //             <div class="col-md-2">
-        //                 <p id="invoiceqty${idCount}"></p>
-        //             </div>
-        //             <div class="col-md-2">
-        //                 <p id="invoiceprice${idCount}"></p>
-        //             </div>
-        //             <div class="col-md-2">
-        //                 <span class="invoice-item-amount"></span>
-        //             </div>
-        //             </div>`;
         $('.grid').append(newitem);
     });
 
@@ -214,6 +200,7 @@ $(function () {
             $('#currenttax').text('0');
         } else {
             $('#currenttax').text($(this).val());
+            $('#showcurrenttax').text($(this).val());
         }
     });
 
@@ -286,11 +273,8 @@ $(function () {
     var companyCity = $('#companycity').val();
     var companyPostal = $('#companypostal').val();
     var companyProvince = $('#companyprovince').val();
-    var companyNumber = $('#companynumber').val();
-    var companyEmail = $('#companyemail').val();
 
     var customerName = $('#customername').val();
-    var customerEmail = $('#customeremail').val();
     var customerAddress = $('#customeraddress').val();
     var customerCity = $('#customercity').val();
     var customerProvince = $('#customerprovince').find(":selected").text();
@@ -326,11 +310,8 @@ $(function () {
         var companyCity = $('#companycity').val();
         var companyPostal = $('#companypostal').val();
         var companyProvince = $('#companyprovince').val();
-        var companyNumber = $('#companynumber').val();
-        var companyEmail = $('#companyemail').val();
 
         var customerName = $('#customername').val();
-        var customerEmail = $('#customeremail').val();
         var customerAddress = $('#customeraddress').val();
         var customerCity = $('#customercity').val();
         var customerProvince = $('#customerprovince').val();
@@ -348,6 +329,12 @@ $(function () {
     $('#showcompanycity').html(companyCity + ',');
     $('#showcompanyprovince').html(companyProvince);
 
+    $('#showcustomername').html(customerName);
+    $('#showcustomeraddress').html(customerAddress);
+    $('#showcustomercity').html(customerCity + ',');
+    $('#showcustomerprovince').html(customerProvince);
 
     $('#showinvoicenumber').html(invoiceNumber);
+    $('#showinvoicedate').html(invoiceDate);
+    $('#showduedate').html(invoiceDuedate);
 });

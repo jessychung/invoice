@@ -82,7 +82,7 @@
                                     <div class="form-group">
                                         <label for="companyprovince">Province</label>
                                         <select id="companyprovince" class="form-control">
-                                            <option value="">Select a Province</option>
+                                            <option value=" ">Select a Province</option>
                                             <option value="Alberta">Alberta</option>
                                             <option value="British Columbia">British Columbia</option>
                                             <option value="Manitoba">Manitoba</option>
@@ -103,20 +103,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="companynumber">Company Phone Number</label>
-                                        <input type="tel" class="form-control" id="companynumber">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="companyemail">Company Email</label>
-                                        <input type="email" class="form-control" id="companyemail">
-                                    </div>
-                                </div>
-                            </div>
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-6">-->
+                                    <!--<div class="form-group">-->
+                                        <!--<label for="companynumber">Company Phone Number</label>-->
+                                        <!--<input type="tel" class="form-control" id="companynumber">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-6">-->
+                                    <!--<div class="form-group">-->
+                                        <!--<label for="companyemail">Company Email</label>-->
+                                        <!--<input type="email" class="form-control" id="companyemail">-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -132,18 +132,18 @@
                     <div class="row box-content">
                         <div class="col-md-12">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="customername">Customer Name</label>
                                         <input type="text" class="form-control" id="customername">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="customeremail">Customer Email</label>
-                                        <input type="email" class="form-control" id="customeremail">
-                                    </div>
-                                </div>
+                                <!--<div class="col-md-6">-->
+                                    <!--<div class="form-group">-->
+                                        <!--<label for="customeremail">Customer Email</label>-->
+                                        <!--<input type="email" class="form-control" id="customeremail">-->
+                                    <!--</div>-->
+                                <!--</div>-->
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -172,7 +172,7 @@
                                     <div class="form-group">
                                         <label for="customerprovince">Province</label>
                                         <select id="customerprovince" class="form-control">
-                                            <option value="">Select a Province</option>
+                                            <option value=" ">Select a Province</option>
                                             <option value="Alberta">Alberta</option>
                                             <option value="British Columbia">British Columbia</option>
                                             <option value="Manitoba">Manitoba</option>
@@ -336,7 +336,8 @@
                                             <h2>Bill To</h2>
                                             <p id="showcustomername"></p>
                                             <p id="showcustomeraddress"></p>
-                                            <p id="showcustomercity"></p>
+                                            <p><span id="showcustomercity"></span> <span id="showcustomerprovince"></span></p>
+                                            <p><span id="showcustomerpostal"></span> <span>Canada</span></p>
                                         </div>
                                         <div class="col-md-4">
                                             <h2>Invoice No.</h2>
@@ -362,8 +363,32 @@
                                             <div class="invoiceitems"></div>
                                             <div class="row" style="margin-top: 20px">
                                                 <div class="col-md-8"></div>
-                                                <div class="col-md-4">
-                                                    segset
+                                                <div class="col-md-4" style="padding-top: 15px;">
+                                                    <div class="row subtotal-row">
+                                                        <div class="col-md-6">
+                                                            <h1>Subtotal</h1>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span class="subtotal">$0.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row tax-row">
+                                                        <div class="col-md-6">
+                                                            <h1>Tax(<span id="showcurrenttax">13</span>%)</h1>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span class="tax">$0.00</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row total-row">
+                                                        <div class="col-md-6">
+                                                            <h1>Total</h1>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <span class="total">$0.00</span>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
