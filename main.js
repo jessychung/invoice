@@ -13,7 +13,7 @@ $(function () {
     var h = rightbox.offset().top;
 
     $(window).on("scroll", function(e) {
-        if ($(window).scrollTop() > h + 85) {
+        if ($(window).scrollTop() > h + 45) {
             rightbox.addClass("fixed");
         } else {
             rightbox.removeClass("fixed");
@@ -44,6 +44,8 @@ $(function () {
             $(this).val(value);
         }
     });
+
+    $('#customtax').html('12');
 
     $('select').find(":selected").each(function () {
         var id = $(this).parent().attr('id');
@@ -123,9 +125,10 @@ $(function () {
         $('.grid').append(newitem);
     });
 
-    var currentTax = $('#currenttax').text();
+    var customTax = $('#customtax').val();
+    console.log(customTax);
 
-    $('#customtax').val(currentTax);
+    $('#currenttax').text(customTax);
 
     function getbill() {
         var subtotal = 0;
@@ -172,6 +175,8 @@ $(function () {
 
             $('.invoiceitems').append(invoiceitem);
         })
+
+
     }
 
     function clearitems() {
@@ -277,8 +282,10 @@ $(function () {
     var customerName = $('#customername').val();
     var customerAddress = $('#customeraddress').val();
     var customerCity = $('#customercity').val();
-    var customerProvince = $('#customerprovince').find(":selected").text();
+    var customerProvince = $('#customerprovince').val();
     var customerPostal = $('#customerpostal').val();
+
+    var customTax = $('#customtax').val();
 
     var invoiceNumber = $('#invoicenumber').val();
     var invoiceDate = $('#invoicedate').val();
@@ -299,6 +306,7 @@ $(function () {
     preview.on('click', function () {
         $('.invoice-view').fadeIn();
         $('.invoice-overlay').fadeIn();
+
         showitems();
     });
 
@@ -317,6 +325,8 @@ $(function () {
         var customerProvince = $('#customerprovince').val();
         var customerPostal = $('#customerpostal').val();
 
+        var customTax = $('#customtax').val();
+
         var invoiceNumber = $('#invoicenumber').val();
         var invoiceDate = $('#invoicedate').val();
         var invoiceDuedate = $('#duedate').val();
@@ -333,6 +343,8 @@ $(function () {
     $('#showcustomeraddress').html(customerAddress);
     $('#showcustomercity').html(customerCity + ',');
     $('#showcustomerprovince').html(customerProvince);
+
+    $('#showcurrenttax').html(customTax);
 
     $('#showinvoicenumber').html(invoiceNumber);
     $('#showinvoicedate').html(invoiceDate);
