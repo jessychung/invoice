@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal</title>
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right:0;
+            bottom:0;
+            background-color: rgba(51, 51, 51, 0.6);
+            justify-content: center;
+            align-items: center;
+            display: none;
+            transition: all .4s;
+        }
+
+        .overlay.opening {
+            display: flex;
+            opacity: 0;
+        }
+
+        .overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .overlay-inner {
+            padding: 20px;
+            background-color: #fff;
+            max-width: 500px;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            right:-10px;
+            top:-10px;
+            background-color: #fff;
+            border-radius: 100px;
+            text-align: center;
+            width: 30px;
+            height:30px;
+            line-height: 30px;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+<p>Hello</p>
+
+<button class="opener">Open me!</button>
+
+<p>sefnkesfksfkesbf</p>
+
+<div class="overlay">
+    <div class="overlay-inner">
+        <button class="close">&times;</button>
+        <div class="overlay-content">
+            <p>I'm content</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    //namespace our app in modal object
+    var modal = {};
+    modal.open = function (myhtml) {
+        $('.overlay-content').html(myhtml);
+        $('.overlay').addClass('opening');
+        setTimeout(function () {
+            $('.overlay').addClass('open');
+        }, 100);
+    };
+
+    modal.close = function () {
+        $('.overlay').removeClass('opening open');
+    };
+
+    modal.toggle = function () {
+        $('.overlay').toggleClass('open');
+    };
+
+    modal.init = function () {
+        //happens on page load, mostly event listeners
+        $('.opener').on('click', function () {
+            modal.open(this.textContent);
+        });
+        //only works if its doing one thing
+        $('.close').on('click', modal.close);
+        $(window).on('keyup', function (e) {
+            if(e.keyCode === 27) {
+                modal.close()
+            }
+        })
+    };
+
+    $(function () {
+        modal.init();
+    })
+</script>
+
+</body>
+</html>
