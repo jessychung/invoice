@@ -5,7 +5,6 @@ $(function () {
     var saveInvoice = $('#saveInvoice');
     var preview = $('#previewInvoice');
 
-    //datepicker
     $( "#invoicedate" ).datepicker();
     $( "#duedate" ).datepicker();
 
@@ -18,9 +17,7 @@ $(function () {
         } else {
             rightbox.removeClass("fixed");
         }
-
     });
-
 
     var idCount = 0;
 
@@ -44,8 +41,6 @@ $(function () {
             $(this).val(value);
         }
     });
-
-    $('#customtax').html('12');
 
     $('select').find(":selected").each(function () {
         var id = $(this).parent().attr('id');
@@ -80,15 +75,15 @@ $(function () {
 
 
     var newitem = `<div class="row grid-item" id="griditem">
-                   <div class="col-md-6">
+                   <div class="col-sm-6 col-md-6">
                    <input type="text" class="form-control grid-input item-desc" placeholder="Enter Item Description" id="item"></div>
-                    <div class="col-md-2">
+                    <div class="col-sm-2 col-md-2">
                         <input type="number" min="0" class="form-control grid-input item-qty" id="qty">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-sm-2 col-md-2">
                         <input type="number" min="0" class="form-control grid-input item-price" id="price">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-sm-2 col-md-2">
                         <span class="item-amount">$0.00</span>
                     </div>
                     <div class="delete-item">
@@ -106,15 +101,15 @@ $(function () {
     addlinebutton.click(function () {
         idCount++;
         var newitem = `<div class="row grid-item" id="griditem${idCount}">
-                   <div class="col-md-6">
+                   <div class="col-sm-6 col-md-6">
                    <input type="text" class="form-control grid-input item-desc" placeholder="Enter Item Description" id="item${idCount}"></div>
-                    <div class="col-md-2">
+                    <div class="col-sm-2 col-md-2">
                         <input type="number" min="0" class="form-control grid-input item-qty" id="qty${idCount}">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-sm-2 col-md-2">
                         <input type="number" min="0" class="form-control grid-input item-price" id="price${idCount}">
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-sm-2 col-md-2">
                         <span class="item-amount">$0.00</span>
                     </div>
                     <div class="delete-item">
@@ -126,9 +121,14 @@ $(function () {
     });
 
     var customTax = $('#customtax').val();
-    console.log(customTax);
 
-    $('#currenttax').text(customTax);
+    if(customTax == '') {
+        $('#currenttax').text('0');
+        $('#showcurrenttax').text('0');
+    } else {
+        $('#currenttax').text(customTax);
+    }
+
 
     function getbill() {
         var subtotal = 0;
@@ -160,15 +160,15 @@ $(function () {
             var invoiceamount = $(this).find('.item-amount').text();
 
             var invoiceitem = `<div class="row">
-                       <div class="col-md-6">
+                       <div class="col-sm-6 col-md-6">
                        <p>${invoicedesc}</p></div>
-                        <div class="col-md-2">
+                        <div class="col-sm-2 col-md-2">
                             <p>${invoiceqty}</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-sm-2 col-md-2">
                             <p>${invoiceprice}</p>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-sm-2 col-md-2">
                             <span class="invoice-item-amount">${invoiceamount}</span>
                         </div>
                         </div>`;
@@ -291,28 +291,30 @@ $(function () {
     var invoiceDate = $('#invoicedate').val();
     var invoiceDuedate = $('#duedate').val();
 
-    $('.invoice-overlay').on('click', function () {
-        $(this).fadeOut();
+    $('.invoice-exit').on('click', function () {
         $('.invoice-view').fadeOut();
         clearitems();
     });
 
-    $('.invoice-exit').on('click', function () {
-        $('.invoice-view').fadeOut();
-        $('.invoice-overlay').fadeOut();
+    $(".invoice-view").click(function(){
+        $(this).fadeOut();
         clearitems();
+    }).find('.invoice-paper').click(function(e) {
+        return false;
     });
 
     preview.on('click', function () {
         $('.invoice-view').fadeIn();
-        $('.invoice-overlay').fadeIn();
-
         showitems();
     });
 
 
     $('input').on('keyup change', function () {
         //inputs
+
+        if($(this).val().length === 0) {
+
+        }
         var companyName = $('#companyname').val();
         var companyAddress = $('#companyaddress').val();
         var companyCity = $('#companycity').val();
@@ -325,14 +327,12 @@ $(function () {
         var customerProvince = $('#customerprovince').val();
         var customerPostal = $('#customerpostal').val();
 
-        var customTax = $('#customtax').val();
-
         var invoiceNumber = $('#invoicenumber').val();
         var invoiceDate = $('#invoicedate').val();
         var invoiceDuedate = $('#duedate').val();
 
+        var customTax = $('#customtax').val();
     });
-
 
     $('#showcompanyname').html(companyName);
     $('#showcompanyaddress').html(companyAddress);
